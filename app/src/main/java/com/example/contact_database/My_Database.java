@@ -33,7 +33,7 @@ public class My_Database extends SQLiteOpenHelper {
     }
 
     public Cursor showdata() {
-        String query="select * from Contact";
+        String query="select * from Contacts";
         SQLiteDatabase db=getReadableDatabase();
         Cursor cursor=db.rawQuery(query,null);
         return  cursor;
