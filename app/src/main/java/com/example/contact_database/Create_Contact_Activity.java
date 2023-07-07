@@ -24,12 +24,16 @@ public class Create_Contact_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_contact);
         back = findViewById(R.id.back);
-        save = findViewById(R.id.save);
+        save = findViewById(R.id.add);
         name1 = findViewById(R.id.name1);
         surname1 = findViewById(R.id.surname1);
         number1 = findViewById(R.id.number1);
 
-
+        int position=getIntent().getIntExtra("position",0);
+        int id=getIntent().getIntExtra("key_id",0);
+        String name=getIntent().getStringExtra("key_name");
+        String surname=getIntent().getStringExtra("key_surname");
+        String number=getIntent().getStringExtra("key_number");
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,17 +53,8 @@ public class Create_Contact_Activity extends AppCompatActivity {
                 Log.d("YYY", "onClick: create data " + n1);
 
                 Intent intent = new Intent(Create_Contact_Activity.this, MainActivity.class);
-
                 startActivity(intent);
-
-                }
-
-
-
-
-
+            }
         });
-
-
     }
 }

@@ -7,7 +7,9 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.contact_database.Model.Contacts;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -19,10 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton add;
     ArrayList<Contacts> contactsList=new ArrayList<>();
-//    ArrayList<Integer> idlist = new ArrayList<>();
-//    ArrayList<String> namelist = new ArrayList<>();
-//    ArrayList<String> surnamelist = new ArrayList<>();
-//    ArrayList<String> numberlist = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
         add = findViewById(R.id.add);
 
         showData();
-
-
-
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     private void showData() {
@@ -62,5 +57,27 @@ public class MainActivity extends AppCompatActivity {
         }
         List_Contact_Adapter adapter = new List_Contact_Adapter(MainActivity.this, contactsList);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(MainActivity.this,Update_Delete_Activity.class);
+                intent.putExtra("position",position);
+                intent.putExtra("keyid",contactsList.get(position).getId());
+                intent.putExtra("keyname",contactsList.get(position).getName());
+                intent.putExtra("keysurname",contactsList.get(position).getSurname());
+                intent.putExtra("keynumber",contactsList.get(position).getNumber());
+                startActivity(intent);
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                my_database.DeleteDataBase(contactsList.get(position).getId());
+                Toast.makeText(MainActivity.this, "Delete", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
     }
 }

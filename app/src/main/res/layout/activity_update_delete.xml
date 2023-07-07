@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Update_Delete_Activity"
+    android:background="@drawable/img_4"
+    android:orientation="vertical">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="2">
+       <ImageView
+           android:id="@+id/backbutton"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="4"
+           android:src="@drawable/baseline_arrow_back_24"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="2"/>
+       <ImageView
+           android:id="@+id/update"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="4"
+           android:src="@drawable/baseline_check_24"/>
+       <ImageView
+           android:id="@+id/star"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="4"
+           android:src="@drawable/baseline_star_border_24"/>
+       <ImageView
+           android:id="@+id/delete"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="4"
+           android:src="@drawable/baseline_more_vert_24"/>
+   </LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="2"
+       android:background="@drawable/img"
+       android:orientation="vertical">
+       <EditText
+           android:id="@+id/editname"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:textColor="@color/black"
+           android:text="Enter Name"
+           android:textSize="30dp"
+           android:textStyle="italic"/>
+       <EditText
+           android:id="@+id/editsurname"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:textColor="@color/black"
+           android:layout_weight="1"
+           android:text=" SurName"
+           android:textSize="30dp"
+           android:textStyle="italic"/>
+       <EditText
+           android:id="@+id/editnumber"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:textColor="@color/black"
+           android:layout_weight="1"
+           android:text="Number"
+           android:textSize="30dp"
+           android:textStyle="italic"/>
+
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.8"></LinearLayout>
+
+
+
+</LinearLayout>

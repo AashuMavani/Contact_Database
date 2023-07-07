@@ -27,7 +27,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:layout_weight="3"
-              android:gravity="center"
+             android:layout_marginTop="10dp"
               android:text="SURNAME"
               android:textSize="20dp"
               android:textStyle="italic" />
@@ -36,7 +36,7 @@
            android:id="@+id/number"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:gravity="center"
+           android:layout_marginLeft="20dp"
            android:layout_weight="1"
            android:text="NUMBER"
            android:textSize="20dp"
