@@ -52,6 +52,6 @@ public class My_Database extends SQLiteOpenHelper {
     public void DeleteDataBase(int id) {
      String query= "delete from Contacts where ID="+id+"";
      SQLiteDatabase db=getWritableDatabase();
-     db.execSQL(query   );
+     db.execSQL(query);
     }
 }
